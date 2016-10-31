@@ -48,22 +48,22 @@ The implementation is done in Java, and structured as a maven project. The proce
 I was not able to find a clean way to build from top to bottom using maven since the nifi-processor has to have a certain structure, and I am using a custom deployed spark launcher. Here is the order that **MUST** be followed to be able to deploy successfully:
 
 1.	Build spark-launcher: 
-*	cd to *NiFi-SnapSpark/spark-launcher* directory
-*	execute `mvn clean install`
-*	this creates a jar file: **target/spark-launcher-0.0.1.jar**
+  *	cd to *NiFi-SnapSpark/spark-launcher* directory
+  *	execute `mvn clean install`
+  *	this creates a jar file: **target/spark-launcher-0.0.1.jar**
 2.	Manually install the spark-launcher jar into the nifi processor repository:
-*	cd to *NiFi-SnapSpark/nifi-sparkconnector-bundle*
-*	Execute script to install jar: `./installSPARK-LAUNCHER`
-*	This installs the spark-launcher jar into the nifi processor repository
+  *	cd to *NiFi-SnapSpark/nifi-sparkconnector-bundle*
+  *	Execute script to install jar: `./installSPARK-LAUNCHER`
+  *	This installs the spark-launcher jar into the nifi processor repository
 3.	Build nifi-processor:
-*	In directory *NiFi-SnapSpark/nifi-sparkconnector-bundle*
-*	execute `mvn install`
+  *	In directory *NiFi-SnapSpark/nifi-sparkconnector-bundle*
+  *	execute `mvn install`
 4.	Build sample job classes:
-*	cd to NiFi-SnapSpark/spark-job
-*	execute `mvn install`
+  *	cd to NiFi-SnapSpark/spark-job
+  *	execute `mvn install`
 5.	Install new processor into the NiFi:
-*	Go to the NiFi installation directory. cd *<NIFI_INSTALLATION_DIR>/lib*
-*	Copy the nar file just built: cp *<REPO_DIR>/nifi-sparkconnector-bundle/nifi-sparkconnector-nar/target/nifi-sparkconnector-nar-0.0.1.nar *<NIFI_INSTALLATION_DIR>/lib/*
+  *	Go to the NiFi installation directory. cd *<NIFI_INSTALLATION_DIR>/lib*
+  *	Copy the nar file just built: cp *<REPO_DIR>/nifi-sparkconnector-bundle/nifi-sparkconnector-nar/target/nifi-sparkconnector-nar-0.0.1.nar *<NIFI_INSTALLATION_DIR>/lib/*
 6.	Restart NiFi
 
 ## Caveats
