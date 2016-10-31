@@ -72,6 +72,15 @@ I was not able to find a clean way to build from top to bottom using maven since
 *	The only “odd” behavior was during very long running jobs; since you do not know the status while it is running, I found it a bit frustrating. This is however the same behavior you experience using spark-submit from the command line. Perhaps monitoring the spark progress and placing it into the NiFi log would be a nice addition. 
 *	Maven structure could be automated so you could do a top level `mvn install` and it should automatically install the spark-launcher jar in the right place, without the need to manually install it. I was unable to get it to work properly.
 
+## Testing
+
+The spark-launcher can be tested using the class `NiFi-SnapSpark/spark-launcher/src/dbx/compute/spark/testLaunchSpark.java
+
+The nifi-plugin can be tested using an easy flow with only two components: **GetFile**, and **SparkProcessor**:
+* *GetFile* standard nifi processor reads a file form a test directory and feeds its contents to the Spark Processor
+* *Spark Processor* reads the contents of the flowfile, and invokes a spark job, based on the properties set in the custom processor, and passing the contents of the flowfile as data for the spark job to run.
+
+![Testing](images/testing-nifi-processor.png)
 
 
 
