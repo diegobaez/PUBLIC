@@ -1,0 +1,1 @@
+mvn install:install-file -DgroupId=spark-launcher -DartifactId=spark-launcher -Dversion=0.0.1 -Dpackaging=jar -Dfile=../spark-launcher/target/spark-launcher-0.0.1.jar
