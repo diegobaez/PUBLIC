@@ -74,7 +74,7 @@ I was not able to find a clean way to build from top to bottom using maven since
 
 ## Testing
 
-The spark-launcher can be tested using the class `NiFi-SnapSpark/spark-launcher/src/dbx/compute/spark/testLaunchSpark.java
+The spark-launcher can be tested using the class `NiFi-SnapSpark/spark-launcher/src/dbx/compute/spark/testLaunchSpark.java`
 
 The nifi-plugin can be tested using an easy flow with only two components: **GetFile**, and **SparkProcessor**:
 * *GetFile* standard nifi processor reads a file form a test directory and feeds its contents to the Spark Processor
