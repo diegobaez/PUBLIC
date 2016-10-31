@@ -64,7 +64,7 @@ I was not able to find a clean way to build from top to bottom using maven since
 5.	Install new processor into the NiFi:
   *	Go to the NiFi installation directory. 
   * cd *NIFI_INSTALLATION_DIR/lib*
-  *	Copy the nar file just built: cp *REPO_DIR/nifi-sparkconnector-bundle/nifi-sparkconnector-nar/target/nifi-sparkconnector-nar-0.0.1.nar *NIFI_INSTALLATION_DIR/lib/*
+  *	Copy the nar file just built: cp *REPO_DIR/nifi-sparkconnector-bundle/nifi-sparkconnector-nar/target/nifi-sparkconnector-nar-0.0.1.nar NIFI_INSTALLATION_DIR/lib/*
 6.	Restart NiFi
 
 ## Caveats
